@@ -1,0 +1,9 @@
+import math
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        fact=math.factorial(n)
+        c=0
+        while(fact%10==0):
+            c=c+1
+            fact=fact//10
+        return c
