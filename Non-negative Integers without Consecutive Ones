@@ -1,0 +1,25 @@
+class Solution:
+    def findIntegers(self, n: int) -> int:
+        def inttobin(n):
+            k=[]
+            while(n>0):
+                k.append(n%2)
+                n=n//2
+            return k
+    
+        k=[]
+        che=1
+        for i in range(n+1):
+            if(i==0):
+                b=[0]
+            else:
+                b=inttobin(i)
+            for j in range((len(b)-1)):
+                if(b[j]==1 and b[j+1]==1):
+                    che=0
+                    break
+                else:
+                    che=1
+            if(che==1):
+                k.append(i)
+        return (len(k))
